@@ -1,0 +1,22 @@
+*.gz
+*.gz.md5
+*.zip
+*.bam.bai
+*.bam
+*.tab
+*.out
+*.bw
+*.err
+*.pdf
+*.png
+*.bed
+*.html
+*.csv
+*.txt
+
+Archive
+
+################################################################################
+# Local-only documentation (kept on disk, never committed/pushed)
+################################################################################
+*.md
