@@ -1,0 +1,5 @@
+sample_id	sample_name	cre_driver	tissue	genotype
+1	EMX1_hippo_wt	EMX1	hippocampus	wt
+2	EMX1_hippo_mut	EMX1	hippocampus	mut
+3	Nestin_hippo_wt	Nestin	hippocampus	wt
+4	Nestin_hippo_mut	Nestin	hippocampus	mut

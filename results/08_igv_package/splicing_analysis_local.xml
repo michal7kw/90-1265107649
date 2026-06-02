@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="mm39" hasGeneTrack="true" hasSequenceTrack="true" locus="All" version="8">
+    <Resources>
+        <Resource path="bigwig/EMX1_wt.bw"/>
+        <Resource path="bigwig/EMX1_mut.bw"/>
+        <Resource path="bigwig/Nestin_wt.bw"/>
+        <Resource path="bigwig/Nestin_mut.bw"/>
+        <Resource path="bam/1_Aligned.sortedByCoord.out.bam"/>
+        <Resource path="bam/2_Aligned.sortedByCoord.out.bam"/>
+        <Resource path="bam/3_Aligned.sortedByCoord.out.bam"/>
+        <Resource path="bam/4_Aligned.sortedByCoord.out.bam"/>
+        <Resource path="bed/EMX1_wt_vs_mut_significant_splicing.bed"/>
+        <Resource path="bed/Nestin_wt_vs_mut_significant_splicing.bed"/>
+        <Resource path="bed/WT_EMX1_vs_Nestin_significant_splicing.bed"/>
+        <Resource path="bed/MUT_EMX1_vs_Nestin_significant_splicing.bed"/>
+    </Resources>
+    <Panel name="DataPanel" height="400">
+    </Panel>
+    <Panel name="FeaturePanel" height="150">
+    </Panel>
+    <PanelLayout dividerFractions="0.72"/>
+</Session>

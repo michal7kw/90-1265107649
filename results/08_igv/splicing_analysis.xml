@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="mm39" hasGeneTrack="true" hasSequenceTrack="true" locus="All" version="8">
+    <Resources>
+        <Resource path="bigwig/EMX1_wt.bw"/>
+        <Resource path="bigwig/EMX1_mut.bw"/>
+        <Resource path="bigwig/Nestin_wt.bw"/>
+        <Resource path="bigwig/Nestin_mut.bw"/>
+        <Resource path="/beegfs/scratch/ric.sessa/kubacki.michal/SRF_Linda_top/90-1265107649/results/02_aligned/1/1_Aligned.sortedByCoord.out.bam"/>
+        <Resource path="/beegfs/scratch/ric.sessa/kubacki.michal/SRF_Linda_top/90-1265107649/results/02_aligned/2/2_Aligned.sortedByCoord.out.bam"/>
+        <Resource path="/beegfs/scratch/ric.sessa/kubacki.michal/SRF_Linda_top/90-1265107649/results/02_aligned/3/3_Aligned.sortedByCoord.out.bam"/>
+        <Resource path="/beegfs/scratch/ric.sessa/kubacki.michal/SRF_Linda_top/90-1265107649/results/02_aligned/4/4_Aligned.sortedByCoord.out.bam"/>
+        <Resource path="bed/EMX1_wt_vs_mut_significant_splicing.bed"/>
+        <Resource path="bed/Nestin_wt_vs_mut_significant_splicing.bed"/>
+        <Resource path="bed/WT_EMX1_vs_Nestin_significant_splicing.bed"/>
+        <Resource path="bed/MUT_EMX1_vs_Nestin_significant_splicing.bed"/>
+    </Resources>
+    <Panel name="DataPanel" height="400">
+        <!-- Coverage tracks will be loaded here -->
+    </Panel>
+    <Panel name="FeaturePanel" height="150">
+        <!-- BED tracks will be loaded here -->
+    </Panel>
+    <PanelLayout dividerFractions="0.72"/>
+</Session>
