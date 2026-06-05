@@ -50,7 +50,7 @@ import numpy as np
 import pandas as pd
 import gseapy as gp
 
-ORGANISM = "Mouse"
+ORGANISM = "mouse"   # gseapy >=1.x validates lowercase; "Mouse" is rejected
 GENE_SETS = [
     "GO_Biological_Process_2023",
     "GO_Cellular_Component_2023",

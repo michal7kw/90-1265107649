@@ -45,24 +45,24 @@
 # =============================================================================
 
 suppressWarnings(suppressMessages({
-  library(optparse)
   library(rtracklayer)
   library(GenomicRanges)
 }))
 
-opt <- parse_args(OptionParser(option_list = list(
-  make_option("--base-dir", type = "character", dest = "base_dir",
-              default = "/beegfs/scratch/ric.sessa/kubacki.michal/SRF_Linda_top/90-1265107649"),
-  make_option("--gtf", type = "character", dest = "gtf",
-              default = "/beegfs/scratch/ric.sessa/kubacki.michal/COMMONS/refdata-gex-GRCm39-2024-A/genes/genes.gtf"),
-  make_option("--min-dpsi", type = "double", dest = "min_dpsi", default = 0.10),
-  make_option("--min-reads", type = "integer", dest = "min_reads", default = 20L)
-)))
+# Minimal base-R arg parsing (avoids an optparse dependency on the cluster).
+args <- commandArgs(trailingOnly = TRUE)
+get_arg <- function(flag, default) {
+  i <- which(args == flag)
+  if (length(i) == 1L && i < length(args)) return(args[i + 1L])
+  default
+}
 
-base_dir  <- opt$base_dir
-gtf_path  <- opt$gtf
-min_dpsi  <- opt$min_dpsi
-min_reads <- opt$min_reads
+base_dir  <- get_arg("--base-dir",
+                     "/beegfs/scratch/ric.sessa/kubacki.michal/SRF_Linda_top/90-1265107649")
+gtf_path  <- get_arg("--gtf",
+                     "/beegfs/scratch/ric.sessa/kubacki.michal/COMMONS/refdata-gex-GRCm39-2024-A/genes/genes.gtf")
+min_dpsi  <- as.numeric(get_arg("--min-dpsi", "0.10"))
+min_reads <- as.integer(get_arg("--min-reads", "20"))
 
 comparisons <- c("EMX1_wt_vs_mut", "Nestin_wt_vs_mut")
 splic_dir   <- file.path(base_dir, "results", "05_splicing")
@@ -119,6 +119,7 @@ for (comp in comparisons) {
                     !is.na(ild))
     if (length(keep) == 0) next
     df <- df[keep, , drop = FALSE]
+    ild <- ild[keep]                          # subset to match the kept rows
 
     reg <- affected_region(df, event)
     gr <- GRanges(seqnames = df$chr,

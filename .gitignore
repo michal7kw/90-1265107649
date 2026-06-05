@@ -14,8 +14,9 @@
 *.csv
 *.txt
 *.md
+*.xlsx
+*.pyc
 
 Archive/
 .*/
-
 
